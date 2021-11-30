@@ -39,7 +39,7 @@ function Tours(props) {
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="main">
+        <div className="section">
           {tourData.map((data) => {
             const { id, image, info, name, price } = data;
             return (
