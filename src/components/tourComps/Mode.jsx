@@ -15,8 +15,8 @@ function Mode() {
         }
     }
     return (
-        <div onClick={changeMode} className="mode">
-            <img src={state} alt="light or dark mode" className="mode"/>
+        <div onClick={changeMode} className="mode1">
+            <img src={state} alt="light or dark mode" className="mode2"/>
         </div>
     )
 }

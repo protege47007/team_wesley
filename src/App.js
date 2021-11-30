@@ -34,9 +34,9 @@ function App() {
 
 
 
-  return<div className="main">
+  return<main>
     {isLoading? <Loading/>: <Tours data={data}/>}
-  </div>
+  </main>
 }
 
 export default App;

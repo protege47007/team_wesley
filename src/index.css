@@ -156,6 +156,7 @@ main {
   width: 90vw;
   max-width: var(--fixed-width);
   margin: 5rem auto;
+  background-color: black;
 }
 .loading {
   text-align: center;
@@ -233,8 +234,13 @@ main {
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
 }
-.mode{
+.mode1, .mode2{
   width: 3rem;
   height: 3rem;
+  background: var(--clr-grey-10);
+  border-radius: 50%;
+}
+.mode1{
   margin-top: .5rem;
+  overflow: hidden;
 }
