@@ -1,16 +1,19 @@
-import React from 'react'
-import Footer from './Footer'
-import Heading from './Heading'
-import Preview from './Preview'
+import React from "react";
+import Footer from "./Footer";
+import Heading from "./Heading";
+import Info from "./Info";
+import Preview from "./Preview";
 
 function Post(props) {
-    return (
-        <div className="single-tour">
-            <Preview image/>
-            <Heading name price/>
-            <Footer/>
-        </div>
-    )
+  const { image, name, price, info } = props;
+  return (
+    <div className="single-tour">
+      <Preview image={image} />
+      <Heading name={name} price={price} />
+      <Info info={info} />
+      <Footer />
+    </div>
+  );
 }
 
-export default Post
+export default Post;
