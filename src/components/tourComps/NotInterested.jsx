@@ -3,9 +3,9 @@ import Delete from './Delete'
 
 function Footer() {
     return (
-        <footer>
+        <>
             <Delete/>
-        </footer>
+        </>
     )
 }
 
