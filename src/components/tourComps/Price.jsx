@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Price(props) {
-    return (
-        <span className="tour-price">
-            ${props.price}
-        </span>
-    )
+  return <span className="tour-price">{props.price}</span>;
 }
 
-export default Price
+export default Price;
