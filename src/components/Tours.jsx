@@ -7,14 +7,16 @@ import Post from './tourComps/Post';
 
 
 function Tours(props) {
-
+    const posts = props.data.map((datum, id)=>(
+        <Post {...datum} key={id}/>
+    ));
     
 
     return (
         <div className="section">
             <Mode/>
             <Brand/>
-            <Post/>
+            {posts}
         </div>
     )
 }

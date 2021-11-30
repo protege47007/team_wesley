@@ -118,6 +118,7 @@ p {
   h4 {
     line-height: 1;
   }
+
 }
 /*  global classes */
 
@@ -130,7 +131,7 @@ p {
 
 @media screen and (min-width: 992px) {
   .section {
-    width: 95vw;
+    width: 50vw;
   }
 }
 .btn {
@@ -188,7 +189,10 @@ main {
   border-top-right-radius: var(--radius);
   border-top-left-radius: var(--radius);
 }
-.tour-info {
+.tour-heading{
+  padding: 1rem 0;
+}
+.tour-info, .tour-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -196,6 +200,9 @@ main {
 }
 .tour-info h4 {
   margin-bottom: 0;
+}
+.info{
+  padding: 0 2rem;
 }
 .single-tour button {
   background: transparent;
