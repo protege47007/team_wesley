@@ -32,9 +32,9 @@ function App() {
 
 
 
-  return<>
+  return<div className="main">
     {isLoading? <Loading/>: <Tours data={data}/>}
-  </>
+  </div>
 }
 
 export default App;

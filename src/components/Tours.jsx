@@ -11,7 +11,7 @@ function Tours(props) {
     
 
     return (
-        <div className="main">
+        <div className="section">
             <Mode/>
             <Brand/>
             <Post/>

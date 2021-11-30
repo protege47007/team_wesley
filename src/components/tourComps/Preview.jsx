@@ -1,8 +1,9 @@
 import React from 'react'
+import dark from '../../images/dark.png';
 
 function Preview(props) {
     return (
-        <img src={props.image} alt="destination" className="img" />
+        <img src={dark} alt="destination" className="img" />
     )
 }
 

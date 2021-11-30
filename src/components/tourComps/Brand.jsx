@@ -2,7 +2,10 @@ import React from 'react'
 
 function Brand() {
     return (
-        <h1 className="title">Our Tour</h1>
+        <div className="title">
+        <h1 >Our Tour</h1>
+        <span className="underline"></span>
+        </div>
     )
 }
 
