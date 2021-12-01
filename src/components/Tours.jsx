@@ -17,7 +17,6 @@ function Tours() {
       .then((data) => {
         setTourData(data);
         setIsLoading(!isLoading);
-        console.log("useEffect rendered!");
       })
       .catch((err) => console.log("error:", err));
   }, []);
