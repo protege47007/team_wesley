@@ -16,7 +16,11 @@ function Loading() {
     }, 1000);
   }, [ellipsis, timer]);
 
-  return <h1 className="loading">Loading{ellipsis}</h1>;
+  return (
+    <main>
+      <h1 className="loading">Loading{ellipsis}</h1>;
+    </main>
+  );
 }
 
 export default Loading;

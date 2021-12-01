@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import Brand from "./tourComps/Brand";
 import SingleTour from "./SingleTour";
+import NoMoreTours from "./tourComps/NoMoreTours";
 
 const url = "https://course-api.com/react-tours-project";
 
@@ -44,7 +45,7 @@ function Tours() {
           </main>
         </div>
       ) : (
-        <p>Don't Show</p>
+        <NoMoreTours />
       )}
     </>
   );
