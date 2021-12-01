@@ -11,23 +11,16 @@ function Tours() {
   const [tourData, setTourData] = useState([]);
   const [isTour, setIsTour] = useState(true);
 
-  const tours = () => {
-    try {
-      fetch(url)
-        .then((res) => {
-          if (res.ok) {
-            return res.json();
-          }
-          throw res;
-        })
-        .then((data) => {
-          setTourData(data);
-          setIsLoading(!isLoading);
-        });
-    } catch (err) {
-      console.error("error: ", err);
-    }
-  };
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setTourData(data);
+        setIsLoading(!isLoading);
+        console.log("useEffect rendered!");
+      })
+      .catch((err) => console.log("error:", err));
+  }, []);
 
   const removeTour = (e) => {
     e.preventDefault();
@@ -39,10 +32,6 @@ function Tours() {
       setIsTour(false);
     }
   };
-
-  useEffect(() => {
-    tours();
-  }, []);
 
   return (
     <>
