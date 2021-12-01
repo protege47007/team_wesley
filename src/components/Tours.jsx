@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import Brand from "./tourComps/Brand";
 import SingleTour from "./SingleTour";
+import NoMoreTours from "./tourComps/NoMoreTours";
 
 const url = "https://course-api.com/react-tours-project";
 
@@ -11,23 +12,15 @@ function Tours() {
   const [tourData, setTourData] = useState([]);
   const [isTour, setIsTour] = useState(true);
 
-  const tours = () => {
-    try {
-      fetch(url)
-        .then((res) => {
-          if (res.ok) {
-            return res.json();
-          }
-          throw res;
-        })
-        .then((data) => {
-          setTourData(data);
-          setIsLoading(!isLoading);
-        });
-    } catch (err) {
-      console.error("error: ", err);
-    }
-  };
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setTourData(data);
+        setIsLoading(!isLoading);
+      })
+      .catch((err) => console.log("error:", err));
+  }, []);
 
   const removeTour = (e) => {
     e.preventDefault();
@@ -39,10 +32,6 @@ function Tours() {
       setIsTour(false);
     }
   };
-
-  useEffect(() => {
-    tours();
-  }, []);
 
   return (
     <>
@@ -56,7 +45,7 @@ function Tours() {
           </main>
         </div>
       ) : (
-        <p>Don't Show</p>
+        <NoMoreTours />
       )}
     </>
   );
