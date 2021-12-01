@@ -9,6 +9,7 @@ const url = "https://course-api.com/react-tours-project";
 function Tours() {
   const [isLoading, setIsLoading] = useState(true);
   const [tourData, setTourData] = useState([]);
+  const [isTour, setIsTour] = useState(true);
 
   const tours = () => {
     try {
@@ -27,6 +28,18 @@ function Tours() {
       console.error("error: ", err);
     }
   };
+
+  const removeTour = (e) => {
+    e.preventDefault();
+    let tourArray = [...tourData];
+    let filteredArray = tourArray.filter((item) => item.id !== e.target.id);
+    setTourData(filteredArray);
+
+    if (filteredArray.length === 0) {
+      setIsTour(false);
+    }
+  };
+
   useEffect(() => {
     tours();
   }, []);
@@ -35,13 +48,15 @@ function Tours() {
     <>
       {isLoading ? (
         <Loading />
-      ) : (
+      ) : isTour ? (
         <div className="section">
           <main>
             <Brand />
-            <SingleTour tourData={tourData} />
+            <SingleTour tourData={tourData} delete={removeTour} />
           </main>
         </div>
+      ) : (
+        <p>Don't Show</p>
       )}
     </>
   );

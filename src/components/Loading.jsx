@@ -14,7 +14,7 @@ function Loading() {
         setTimer(0);
       }
     }, 1000);
-  }, [timer]);
+  }, [ellipsis, timer]);
 
   return <h1 className="loading">Loading{ellipsis}</h1>;
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 import Delete from './Delete'
 
-function Footer() {
+function NotInterested(props) {
     return (
         <>
-            <Delete/>
+            <Delete delete={props.delete} id={props.id}/>
         </>
     )
 }
 
-export default Footer
+export default NotInterested

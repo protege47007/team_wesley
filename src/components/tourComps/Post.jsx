@@ -5,7 +5,7 @@ import Info from "./Info";
 import Preview from "./Preview";
 
 function Post(props) {
-  const { image, name, price, info } = props;
+  const { id, image, name, price, info } = props;
   return (
     <>
       <div className="single-tour">
@@ -13,7 +13,7 @@ function Post(props) {
         <footer>
           <Heading name={name} price={price} />
           <Info info={info} />
-          <NotInterested />
+          <NotInterested delete={props.delete} id={id}/>
         </footer>
       </div>
     </>
