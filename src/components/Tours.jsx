@@ -11,12 +11,14 @@ function Tours() {
   const [isLoading, setIsLoading] = useState(true);
   const [tourData, setTourData] = useState([]);
   const [isTour, setIsTour] = useState(true);
+  const [refreshData, setRefreshData] = useState([])
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setTourData(data);
+        setRefreshData(data)
         setIsLoading(!isLoading);
       })
       .catch((err) => console.log("error:", err));
@@ -33,6 +35,11 @@ function Tours() {
     }
   };
 
+  const refresh = () => {
+    setTourData(refreshData);
+    setIsTour(true);
+  };
+
   return (
     <>
       {isLoading ? (
@@ -45,7 +52,7 @@ function Tours() {
           </main>
         </div>
       ) : (
-        <NoMoreTours />
+        <NoMoreTours refresh={refresh} />
       )}
     </>
   );
